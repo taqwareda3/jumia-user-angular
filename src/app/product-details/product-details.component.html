@@ -1,0 +1,28 @@
+
+<div class="card mb-3" style="max-width:300px;">
+  <div class="row g-0">
+
+      <img [src]="product.Image" class="card-img-top"  style="width: 18rem;">
+
+
+      <div class="card-body">
+        <p class="card-title"><b>Names:</b>{{product.Name}}</p>
+        <p class="card-text"><b>Price:</b>{{product.Price}}</p>
+        <p class="card-text"><b>Quantity:</b>{{product.Quantity}}</p>
+        <p class="card-text"><b>Description:</b>{{product.Description}}</p>
+         <button
+          type="button"
+          class="btn btn-dark bg-dark"
+           (click)="addToCart()"
+        >
+          Add TO Card
+        </button>
+        <div *ngIf="flag">
+          <input type="number" class="form-control" placeholder="Quantity" #quntity/>
+          <button (click)="buy(quntity.value)" class="btn btn-primary">Buy</button>
+        </div>
+        <button type="button" class="btn btn-primary"  (click)="backToProd()">Back</button>
+
+    </div>
+  </div>
+</div>
